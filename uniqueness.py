@@ -4,19 +4,15 @@ Calculate the uniqueness of each subject's eigenvector centrality matrix using P
 
 import argparse
 import pickle
-import sys
 from pathlib import Path
 
 import h5py
 import numpy as np
 import pandas as pd
-from numpy.linalg import norm
 from scipy.optimize import linear_sum_assignment
-from scipy.stats import pearsonr, spearmanr
-from sklearn.metrics.pairwise import cosine_similarity
 
 
-HDF5_FILE = "data/emodes_lh.h5" # Change to your hdf file with bids structure ./sub-x/ses-y
+HDF5_FILE = "data/emodes_lh.h5"  # Change to your hdf file with bids structure ./sub-x/ses-y
 EIGENGROUPS = {
     "0": (0, 0),
     "1": (1, 3),
